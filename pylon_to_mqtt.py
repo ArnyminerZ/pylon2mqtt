@@ -306,7 +306,7 @@ def run(argv):
     #setup the MQTT Client for publishing and subscribing
     clientId = argumentValues['mqttUser'] + "_mqttclient_" + str(randint(100, 999))
     log.info("Connecting with clientId=" + clientId)
-    mqttClient = mqttclient.Client(clientId) 
+    mqttClient = mqttclient.Client(mqtt.CallbackAPIVersion.VERSION1, clientId) 
     mqttClient.username_pw_set(argumentValues['mqttUser'], password=argumentValues['mqttPassword'])
     mqttClient.on_connect = on_connect    
     mqttClient.on_disconnect = on_disconnect  
