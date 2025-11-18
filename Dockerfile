@@ -1,6 +1,6 @@
 FROM python:3.13-slim
 
-RUN pip install --no-cache-dir pyserial paho-mqtt construct
+RUN pip install --root-user-action --no-cache-dir pyserial paho-mqtt construct
 
 ADD pylon_to_mqtt.py /
 ADD support/*.py support/
